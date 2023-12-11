@@ -1,0 +1,27 @@
+npm install react-leaflet leaflet
+npm install axios
+npm install multer cloudinary
+
+//instalaciones de fronted//
+npm install bootstrap
+
+porro de huella de carbono con carbon interface
+const API_KEY = 'wW4yDorzSkjS6jfux8TA'; // Reemplaza 'TU_API_KEY' con tu clave de API
+
+
+
+// Ejemplo de uso
+const datosCalculo = {
+    "latitud": 36.6983961,
+    "longitud": -4.4749406
+};
+
+calcularHuellaDeCarbono(datosCalculo)
+  .then((resultado) => {
+    // Maneja los resultados aquí
+    console.log('Resultado del cálculo:', resultado);
+  })
+  .catch((error) => {
+    // Maneja los errores aquí
+    console.error('Error en el cálculo de la huella de carbono:', error);
+  });

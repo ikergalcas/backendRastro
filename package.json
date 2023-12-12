@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": "14.x"
+    "node": "20.x"
   },
   "type": "module",
   "scripts": {
-    "dev": "nodemon  src/index.js",
-    "dev2": "nodemon src/indexs/indexProducto.js",
-    "dev4": "nodemon src/indexs/indexUsuario.js"
+    "dev": "node src/index.js",
+    "dev2": "node src/indexs/indexProducto.js",
+    "dev4": "node src/indexs/indexUsuario.js"
   },
   "keywords": [],
   "author": "",

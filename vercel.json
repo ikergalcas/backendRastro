@@ -1,21 +1,12 @@
 {
-    "app": "elRastro",
-    "framework": "nodejs",
-    "port": 3001,
-    "proxy": {
-        "/productos/": {
-        "target": "http://localhost:3001",
-        "ws": true
-        },
-        "/usuarios/": {
-        "target": "http://localhost:3003",
-        "ws": true
-        }
-    },
     "version": 2,
     "public": false,
-    "builds": [{ "src": "./src/index.js", "use": "@vercel/node" }],
+    "builds": [{ "src": "./src/indexs/indexProducto.js", "use": "@vercel/node" },
+               { "src": "./src/indexs/indexUsuario.js", "use": "@vercel/node" },
+               { "scr": "./src/index.js", "use": "@vercel/node"}
+    ],
     "routes": [
-    { "src": "/(.*)", "dest": "/" }
+    { "src": "/src/(.*)", "dest": "/src/index.js" },
+    { "src": "/(.*)", "dest": "/src/index.js"}
     ]
 }

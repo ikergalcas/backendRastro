@@ -1,4 +1,17 @@
 {
+    "app": "elRastro",
+    "framework": "nodejs",
+    "port": 3001,
+    "proxy": {
+        "/productos/": {
+        "target": "http://localhost:3001",
+        "ws": true
+        },
+        "/usuarios/": {
+        "target": "http://localhost:3003",
+        "ws": true
+        }
+    },
     "version": 2,
     "public": false,
     "builds": [{ "src": "./src/index.js", "use": "@vercel/node" }],

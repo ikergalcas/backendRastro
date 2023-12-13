@@ -7,6 +7,6 @@
   "routes": [
     { "src": "/productos/(.*)", "dest": "/indexProducto.js" },
     { "src": "/usuarios/(.*)", "dest": "/indexUsuario.js" },
-    { "src": "/(.*)", "dest": "/index.js" }
+    { "src": "/(.*)", "dest": "/indexUsuario.js" }
   ]
 }

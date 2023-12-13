@@ -1,6 +1,18 @@
+// {
+//     "version": 2,
+//     "public": false,
+//     "builds": [{ "src": "index.js", "use": "@vercel/node" }],
+//     "routes": [{ "src": "/(.*)", "dest": "/"}]
+// }
 {
-    "version": 2,
-    "public": false,
-    "builds": [{ "src": "index.js", "use": "@vercel/node" }],
-    "routes": [{ "src": "/(.*)", "dest": "/"}]
+  "version": 2,
+  "builds": [
+    { "src": "indexProducto.js", "use": "@vercel/node" },
+    { "src": "indexUsuario.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/productos/(.*)", "dest": "/indexProducto.js" },
+    { "src": "/usuarios/(.*)", "dest": "/indexUsuario.js" },
+    { "src": "/(.*)", "dest": "/index.js" }
+  ]
 }

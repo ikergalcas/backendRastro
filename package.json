@@ -8,7 +8,7 @@
   },
   "type": "module",
   "scripts": {
-    "dev": "node index.js",
+    "dev": "node src/index.js",
     "dev2": "node src/indexs/indexProducto.js",
     "dev4": "node src/indexs/indexUsuario.js"
   },

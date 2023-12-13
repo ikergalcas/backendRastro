@@ -2,7 +2,7 @@ import express from 'express'
 import multer from 'multer'
 import cloudinary from 'cloudinary'
 
-const upload = multer({ dest: 'uploads/' });  // Indica el directorio donde multer debe almacenar los archivos temporales
+const upload = multer();  // Indica el directorio donde multer debe almacenar los archivos temporales
 cloudinary.config({
     cloud_name: 'dten77l85',
     api_key: '829615256525372',

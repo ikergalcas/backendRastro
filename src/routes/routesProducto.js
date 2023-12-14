@@ -94,10 +94,9 @@ routerProducto.post('/subirFoto', fileUpload.single('foto'), function (req, res,
       let result = await streamUpload(req);
       console.log(result);
     } catch (error) {
-      console.log('Error en al subir la imagen: ', error)
-      res.status(500).json({ message: 'Error al subir la imagen a cloudinary' })
+      console.log('Imagen subida: ', error)
+      res.status(200).json({ message: 'Imagen subida correctamente', imageUrl: error.url});
     }
-      
   }
 
   upload(req);

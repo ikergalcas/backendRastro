@@ -45,38 +45,11 @@ routerProducto.put('/:idProducto/crearRespuestaComentario/:idComentario',crearRe
 routerProducto.put('/:idProducto/deleteComentario/:idComentario',deleteComentario)
 routerProducto.get('/:idProducto/ubicacion', getUbiProducto)
 
-// const storage = multer.memoryStorage();
-// const upload = multer({ storage: storage });
-
-// routerProducto.post('/subirFoto', upload.single('foto'), async (req, res) => {
-//     try {
-//       const foto = req.file;
-  
-//       // Verifica si multer ha creado el archivo temporal correctamente
-//       if (!foto) {
-//         return res.status(400).json({ error: 'No se proporcionó el archivo de imagen.' });
-//       }
-  
-//       // Subir la foto a Cloudinary
-//       const cloudinaryResponse = await cloudinary.uploader.upload(foto.path, {
-//         // Puedes agregar opciones adicionales aquí
-//       });
-  
-//       // Puedes hacer algo con la respuesta de Cloudinary, como almacenar la URL en tu base de datos
-//       console.log('Foto subida a Cloudinary:', cloudinaryResponse.url);
-  
-//       res.status(200).json({ message: 'Imagen subida correctamente', imageUrl: cloudinaryResponse.url});
-//     } catch (error) {
-//       console.error(error);
-//       res.status(500).json({ error: 'Error al subir la foto a Cloudinary' });
-//     }
-//   });
-
 routerProducto.post('/subirFoto', fileUpload.single('foto'), function (req, res, next) {
   let streamUpload = (req) => {
       return new Promise((resolve, reject) => {
           let stream = cloudinary.uploader.upload_stream(
-            (error, result) => {
+            (result, error) => {
               if (result) {
                 resolve(result);
               } else {
@@ -92,10 +65,10 @@ routerProducto.post('/subirFoto', fileUpload.single('foto'), function (req, res,
   async function upload(req) {
     try {
       let result = await streamUpload(req);
-      console.log(result);
+      res.status(200).json({ message: 'Imagen subida correctamente', imageUrl: result.url});
     } catch (error) {
-      console.log('Imagen subida: ', error)
-      res.status(200).json({ message: 'Imagen subida correctamente', imageUrl: error.url});
+      console.log('Error al subir la imagen: ', error)
+      res.status(500).json({ message: 'Error al subir la imagen:', error});
     }
   }
 

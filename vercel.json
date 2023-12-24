@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "indexProducto.js", "use": "@vercel/node" },
+    { "src": "indexUsuario.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/productos/(.*)", "dest": "/indexProducto.js" },
+    { "src": "/usuarios/(.*)", "dest": "/indexUsuario.js" },
+    { "src": "/(.*)", "dest": "/indexUsuario.js" }
+  ]
+}

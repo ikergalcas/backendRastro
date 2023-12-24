@@ -729,7 +729,7 @@ export const getHuellaCarbono = async (req, res) => {
                   body: JSON.stringify(dataHC),
                   headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer FAEJgvTeItGghJZhfiWJg'
+                    'Authorization': 'Bearer z94xdqcDQrTxQmxZDxSKAQ'
                   }
                 };
                 const apiUrl = `https://www.carboninterface.com/api/v1/estimates`;
@@ -827,7 +827,7 @@ export const getHuellaCarbonoNuevo = async (req, res) => {
                   body: JSON.stringify(dataHC),
                   headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer FAEJgvTeItGghJZhfiWJg'
+                    'Authorization': 'Bearer z94xdqcDQrTxQmxZDxSKAQ'
                   }
                 };
                 const apiUrl = `https://www.carboninterface.com/api/v1/estimates`;
